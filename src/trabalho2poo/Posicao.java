@@ -19,11 +19,7 @@ public class Posicao {
     
     private boolean hasSpecial;
     
-    private Arma arma;
-    private Virus virus;
-    private Bomba bomba;
-    
-    private int type;
+    private ItensEspeciais itemEspecial;
     
     public int x, y, z;
     
@@ -34,34 +30,20 @@ public class Posicao {
         
         hasSpecial = false;
     }
-    public Posicao(int x, int y, int z, Arma a){
+    public Posicao(int x, int y, int z, ItensEspeciais i){
         this.x = x;
         this.y = y;
         this.z = z;
         
+        this.itemEspecial = i;
         this.hasSpecial = true;
-        this.arma = a;
-        this.type = TYPE_ARMA;
+    }    
+    public int getType(){
+        return this.itemEspecial.type;
     }
-    public Posicao(int x, int y, int z, Bomba b){
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        
-        this.hasSpecial = true;
-        this.bomba = b;
-        this.type = TYPE_BOMBA;
+    public String getName(){
+        return this.itemEspecial.name;
     }
-    public Posicao(int x, int y, int z, Virus v){
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        
-        this.hasSpecial = true;
-        this.virus = v;
-        this.type = TYPE_VIRUS;
-    }
-    
     public void setRobot(Robo r){
         this.r = r;
         this.hasRobot = true;
@@ -74,6 +56,9 @@ public class Posicao {
     }
     public void removeItemEspecial(ItensEspeciais i){
         this.hasSpecial = false;
+    }
+    public boolean hasSpecial(){
+        return this.hasSpecial;
     }
     
 }

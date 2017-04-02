@@ -12,32 +12,27 @@ import java.util.Random;
  * @author Paulo Vitor
  */
 public class ItensEspeciais {
-    public Arma armaAleatoria(){
-        Random random = new Random();
-        int decisaoArma = random.nextInt(100);
-        Arma a;
+    public final static int TYPE_ARMA = 0;
+    public final static int TYPE_VIRUS = 1;
+    public final static int TYPE_BOMBA = 2;
+    
+    protected int dano;
+    protected int turnos;
+    protected int type;
+    protected String name;
+    
+    public ItensEspeciais(){
+      
+    }
+    public ItensEspeciais(String name, int type, int dano){
+        this.name = name;
+        this.type = type;
+        this.dano = dano;
+    }
+    public int getDano(){
+        return dano;
+    }
+    public void setEffects(){
         
-        if(decisaoArma < 20){
-            ///LASERCANNON
-            a = new Arma("LaserCannon", 200);
-        }
-        else if(decisaoArma >= 20 && decisaoArma < 40){
-            //MISSILES
-            a = new Arma("Misseles", 100);
-        }
-        else if(decisaoArma >= 40 && decisaoArma < 60){
-            //GAUSSCANNON
-            a = new Arma("GaussCannon", 70);
-        }
-        else if(decisaoArma >= 60 && decisaoArma < 80){
-            //SHOCKCANNON;
-            a = new Arma("ShockCannon", 150);
-        }
-        else{
-            //RAILGUN
-            a = new Arma("Railgun", 300);
-        }
-        
-        return a;
     }
 }

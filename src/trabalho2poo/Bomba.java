@@ -9,6 +9,12 @@ package trabalho2poo;
  *
  * @author Paulo Vitor
  */
-public class Bomba {
-    
+public class Bomba extends ItensEspeciais{
+    private int dano = 300;
+
+    public Bomba() {
+        super();
+        this.name = "Bomba";
+        this.type = TYPE_BOMBA;
+    } 
 }

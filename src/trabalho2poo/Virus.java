@@ -9,6 +9,12 @@ package trabalho2poo;
  *
  * @author Paulo Vitor
  */
-public class Virus {
+public class Virus extends ItensEspeciais{ 
+    public Virus(){
+        super();
+        this.dano = 100;
+        this.turnos = 5;
+        this.name = "Virus";
+    }
     
 }
